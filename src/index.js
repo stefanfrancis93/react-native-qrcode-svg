@@ -83,7 +83,7 @@ const QRCode = React.forwardRef((props, ref) => {
     linearGradient = ['rgb(255,0,0)', 'rgb(0,255,255)'],
     ecl = 'M',
     onError
-  } = props;
+  } = props
   const result = useMemo(() => {
     try {
       return transformMatrixIntoPath(genMatrix(value, ecl), size)
@@ -128,10 +128,10 @@ const QRCode = React.forwardRef((props, ref) => {
         </LinearGradient>
       </Defs>
       <G>
-        <Rect 
-        x={-quietZone}
-        y={-quietZone}
-        width={size+(quietZone*2)} height={size+(quietZone*2)} fill={backgroundColor} />
+        <Rect
+          x={-quietZone}
+          y={-quietZone}
+          width={size + (quietZone * 2)} height={size + (quietZone * 2)} fill={backgroundColor} />
       </G>
       <G>
         <Path
