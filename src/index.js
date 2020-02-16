@@ -82,7 +82,9 @@ const QRCode = React.forwardRef((props, ref) => {
     gradientDirection = ['0%', '0%', '100%', '100%'],
     linearGradient = ['rgb(255,0,0)', 'rgb(0,255,255)'],
     ecl = 'M',
-    onError
+    onError,
+    borderWidth,
+    borderPadding,
   } = props
   const result = useMemo(() => {
     try {
@@ -134,6 +136,15 @@ const QRCode = React.forwardRef((props, ref) => {
           width={size + (quietZone * 2)} height={size + (quietZone * 2)} fill={backgroundColor} />
       </G>
       <G>
+        {(borderWidth && borderPadding) &&
+        <Rect
+          x={-borderPadding}
+          y={-borderPadding}
+          width={size + borderPadding * 2}
+          height={size + borderPadding * 2}
+          strokeWidth={borderWidth}
+          stroke={color}
+        />}
         <Path
           d={path}
           stroke={enableLinearGradient ? 'url(#grad)' : color}
