@@ -136,7 +136,6 @@ const QRCode = React.forwardRef((props, ref) => {
           width={size + (quietZone * 2)} height={size + (quietZone * 2)} fill={backgroundColor} />
       </G>
       <G>
-        {(borderWidth && borderPadding) &&
         <Rect
           x={-borderPadding}
           y={-borderPadding}
@@ -144,7 +143,7 @@ const QRCode = React.forwardRef((props, ref) => {
           height={size + borderPadding * 2}
           strokeWidth={borderWidth}
           stroke={color}
-        />}
+        />
         <Path
           d={path}
           stroke={enableLinearGradient ? 'url(#grad)' : color}
