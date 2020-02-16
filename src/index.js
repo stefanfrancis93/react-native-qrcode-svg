@@ -84,7 +84,7 @@ const QRCode = React.forwardRef((props, ref) => {
     ecl = 'M',
     onError,
     borderWidth,
-    borderPadding,
+    borderPadding
   } = props
   const result = useMemo(() => {
     try {
